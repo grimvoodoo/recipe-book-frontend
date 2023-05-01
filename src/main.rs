@@ -2,7 +2,6 @@ use reqwasm::http::Request;
 use serde::{Deserialize, Serialize};
 use yew::prelude::*;
 
-// Replace the Period struct with the Ingredient and Recipe structs
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Properties)]
 pub struct Ingredient {
     pub name: String,
@@ -19,13 +18,11 @@ pub struct Recipe {
 
 type RecipeList = Vec<Recipe>;
 
-// Replace the PeriodComponentProps struct with RecipeComponentProps
 #[derive(PartialEq, Properties)]
 struct RecipeComponentProps {
     pub recipe: Recipe,
 }
 
-// Replace the period_component function with the recipe_component function
 #[function_component(RecipeComponent)]
 fn recipe_component(props: &RecipeComponentProps) -> Html {
     let RecipeComponentProps { recipe } = props;
