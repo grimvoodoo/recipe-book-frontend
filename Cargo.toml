@@ -1,0 +1,15 @@
+[package]
+name = "cook_book_frontend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = { version = "0.20", features = ["csr"] }
+wasm-bindgen-futures = "0.4.30"
+reqwasm = "0.5.0"
+serde_json = "1.0.81"
+serde = { version = "1.0.37", features = ["derive"]}
+js-sys = "0.3"
+web-sys = "0.3.58"
