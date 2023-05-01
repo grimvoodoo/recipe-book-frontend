@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
-use yew::Properties;
+use web_sys::MouseEvent;
+use yew::{Callback, Properties};
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Properties)]
 pub struct Ingredient {
@@ -18,6 +19,12 @@ pub struct Recipe {
 #[derive(PartialEq, Properties)]
 pub struct RecipeComponentProps {
     pub recipe: Recipe,
+}
+
+#[derive(Properties, PartialEq, Clone)]
+pub struct RecipeListComponentProps {
+    pub recipe: Recipe,
+    pub on_click: Callback<MouseEvent>,
 }
 
 pub type RecipeList = Vec<Recipe>;
