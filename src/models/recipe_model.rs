@@ -15,7 +15,9 @@ pub struct Recipe {
     pub instructions: Vec<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Properties)]
-struct RecipeList {
-    pub recipes: Vec<Recipe>,
+#[derive(PartialEq, Properties)]
+pub struct RecipeComponentProps {
+    pub recipe: Recipe,
 }
+
+pub type RecipeList = Vec<Recipe>;
