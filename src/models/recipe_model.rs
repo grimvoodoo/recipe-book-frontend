@@ -27,4 +27,9 @@ pub struct RecipeListComponentProps {
     pub on_click: Callback<MouseEvent>,
 }
 
+#[derive(Properties, Clone, PartialEq)]
+pub struct AppProps {
+    pub recipe_id: Option<i32>,
+}
+
 pub type RecipeList = Vec<Recipe>;

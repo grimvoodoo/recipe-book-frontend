@@ -5,24 +5,54 @@ use crate::models::recipe_model::RecipeComponentProps;
 #[function_component(RecipeComponent)]
 pub fn recipe_component(props: &RecipeComponentProps) -> Html {
     let RecipeComponentProps { recipe } = props;
-    let nothing = "".to_string();
+
+    let ingredients_rows = recipe
+        .ingredients
+        .iter()
+        .map(|ingredient| {
+            html! {
+                <tr>
+                    <td>{ingredient.name.clone()}</td>
+                    <td>{ingredient.quantity}</td>
+                    <td>{ingredient.unit.clone().unwrap_or_else(|| "".to_string())}</td>
+                </tr>
+            }
+        })
+        .collect::<Html>();
+
+    let instructions_list = recipe
+        .instructions
+        .iter()
+        .map(|instruction| {
+            html! {
+                <li>{instruction.clone()}</li>
+            }
+        })
+        .collect::<Html>();
+
     html! {
         <div class="recipe">
-            <div class="name">{recipe.name.to_owned()}</div>
-            <div class="ingredients">
-                {
-                    recipe.ingredients.iter().map(|ingredient| {
-                        let unit = ingredient.unit.as_ref().unwrap_or(&nothing);
-                        html! {<div>{format!("{} {}{}", ingredient.quantity, ingredient.name, unit)}</div>}
-                    }).collect::<Html>()
-                }
+            <h2 class="recipe-name">{recipe.name.clone()}</h2>
+            <div class="recipe-ingredients">
+                <h3>{"Ingredients"}</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{"Name"}</th>
+                            <th>{"Quantity"}</th>
+                            <th>{"Unit"}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {ingredients_rows}
+                    </tbody>
+                </table>
             </div>
-            <div class="instructions">
-                {
-                    recipe.instructions.iter().map(|instruction| {
-                        html! {<div>{instruction.to_owned()}</div>}
-                    }).collect::<Html>()
-                }
+            <div class="recipe-instructions">
+                <h3>{"Instructions"}</h3>
+                <ol>
+                    {instructions_list}
+                </ol>
             </div>
         </div>
     }

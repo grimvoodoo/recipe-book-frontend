@@ -13,3 +13,4 @@ serde_json = "1.0.81"
 serde = { version = "1.0.37", features = ["derive"]}
 js-sys = "0.3"
 web-sys = "0.3.58"
+yew-router = "0.17.0"

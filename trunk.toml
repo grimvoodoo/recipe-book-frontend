@@ -1,0 +1,6 @@
+[build]
+index = "index.html"
+css = "styles.css"
+
+dist = "dist"
+cache = "dist/.cache"
