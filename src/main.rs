@@ -1,7 +1,8 @@
 mod components;
 mod models;
-use components::app::App;
+mod routers;
+use routers::router::Router;
 
-fn main() {
-    yew::Renderer::<App>::new().render();
+pub fn main() {
+    yew::Renderer::<Router>::new().render();
 }

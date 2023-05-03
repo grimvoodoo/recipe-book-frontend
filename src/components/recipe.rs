@@ -39,7 +39,7 @@ pub fn recipe_component(props: &RecipeComponentProps) -> Html {
                     <thead>
                         <tr>
                             <th>{"Name"}</th>
-                            <th>{"Quantity"}</th>
+                            <th>{"Qnt"}</th>
                             <th>{"Unit"}</th>
                         </tr>
                     </thead>

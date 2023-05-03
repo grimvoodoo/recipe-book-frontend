@@ -4,7 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grim's Recipe App</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #2b2f3a;
+        color: #cfd1e0;
+        font-size: 30px;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+      }
+
+      #app {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #e0e0e0;
+        font-weight: bold;
+        margin: 0 0 20px;
+      }
+
+      /* Table Styles */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        background-color: #3c404b;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #4e5254;
+        padding: 8px;
+        text-align: left;
+        color: #d0d0d0;
+      }
+
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #6caee0;
+        color: #e0e0e0;
+      }
+
+      /* Dark mode link color */
+      a {
+        color: #6caee0;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Button Styles */
+      button {
+        background-color: #6caee0;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #5898c0;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
